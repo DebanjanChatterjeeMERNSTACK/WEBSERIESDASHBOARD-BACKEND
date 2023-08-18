@@ -6,7 +6,7 @@ const Comment=require("../model/commentmodel")
 
 
 route.post("/comment",async(req,res)=>{
- const  commentdata=req.body
+ const  {commentdata}=req.body
 
     const comments=await Comment({comment:commentdata})
    comments.save()
