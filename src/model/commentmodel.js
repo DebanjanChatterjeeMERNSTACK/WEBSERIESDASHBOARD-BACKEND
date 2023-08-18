@@ -4,9 +4,6 @@ const mongoose=require("mongoose")
 
 const Commentschema =new mongoose.Schema({
   
-    id:{
-        type:String
-    },
     comment:{
         type :String
     }
