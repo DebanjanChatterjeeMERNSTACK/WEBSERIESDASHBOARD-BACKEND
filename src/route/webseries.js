@@ -25,10 +25,10 @@ route.get("/seriessearch/:id", async (req, res) => {
 })
 
 route.get("/seriesfilter/:id", async (req, res) => {
-    const id = req.params["id"]
+    const _id = req.params["id"]
 
 
-    const user = await Webseries.find({id:_id.toString()})
+    const user = await Webseries.find({_id:_id.toString()})
     res.send(user)
 
 })
