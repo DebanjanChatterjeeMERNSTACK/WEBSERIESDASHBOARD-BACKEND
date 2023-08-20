@@ -26,10 +26,14 @@ route.get("/seriessearch/:id", async (req, res) => {
 
 route.get("/seriesfilter/:id", async (req, res) => {
     const _id = req.params["id"]
-
-
+    const users = await Webseries.find({_id:_id.toString()})
+    if(users){
     const user = await Webseries.find({_id:_id.toString()})
     res.send(user)
+    }
+    else{
+        res.send({mess:"send valid id"})
+    }
 
 })
 
